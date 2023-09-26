@@ -1,14 +1,14 @@
 'use client'
 
-import { Icon, IconType } from './Icon'
+import { Icon } from './Icon'
 import { Profile } from './Profile'
 
 export function Utilities() {
   return (
     <div className="flex items-center gap-5">
-      <Icon type={IconType.Like} />
-      <Icon type={IconType.Notification} hasNotification />
-      <Icon type={IconType.Settings} />
+      <Icon type="Like" />
+      <Icon type="Notification" hasNotification />
+      <Icon type="Settings" />
       <Profile />
     </div>
   )
