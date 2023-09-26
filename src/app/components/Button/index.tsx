@@ -1,10 +1,11 @@
 'use client'
 
+import { ButtonHTMLAttributes } from 'react'
 import { CaretDown } from '@phosphor-icons/react'
 
 export type ButtonVariation = 'primary' | 'secondary' | 'minimal'
 
-export type ButtonProps = {
+export type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   disabled?: boolean
   title?: string
   rightIcon?: boolean
@@ -20,7 +21,7 @@ export function Button({
 }: ButtonProps) {
   return (
     <button
-      className={`px-4 py-1 rounded-md font-semibold flex items-center gap-2 group border-[inset] ${
+      className={`px-4 py-1 rounded-md font-semibold flex items-center gap-2 group border-[inset] cursor-pointer z-10 ${
         variation === 'primary'
           ? 'bg-primary-500 text-primary-0 focus:border-2 focus:border-[#CEBEFE] focus:bg-primary-700'
           : variation === 'secondary'
