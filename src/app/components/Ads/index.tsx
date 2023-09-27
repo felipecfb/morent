@@ -20,12 +20,14 @@ export function Ads({
 }: AdsProps) {
   return (
     <div
-      className={`w-full flex flex-col items-start gap-4 p-6 pb-28 relative ${
+      className={`w-full flex flex-col items-start gap-5 p-6 pb-28 relative ${
         background === 'primary' ? 'bg-primary-500' : 'bg-information-500'
       } rounded-[10px]`}
     >
-      <h1 className="font-semibold text-3xl z-10">{title}</h1>
-      <p className="z-10">{description}</p>
+      <div className="title flex flex-col gap-4 max-w-[284px]">
+        <h1 className="font-semibold text-3xl z-10 text-primary-0">{title}</h1>
+        <p className="z-10 text-primary-0">{description}</p>
+      </div>
       <Button
         title="Rental car"
         onClick={onClick}
