@@ -1,12 +1,12 @@
 import Image from 'next/image'
-import { Button } from '../Button'
+import { BackgroundColors, Button } from '../Button'
 
-type BackgroundColors = 'primary' | 'information'
+type Background = 'primary' | 'information'
 
 interface AdsProps {
   title: string
   description: string
-  background: BackgroundColors
+  background: Background
   backgroundImage: string
   onClick: () => void
 }
@@ -26,7 +26,15 @@ export function Ads({
     >
       <h1 className="font-semibold text-3xl z-10">{title}</h1>
       <p className="z-10">{description}</p>
-      <Button title="Rental car" onClick={onClick} />
+      <Button
+        title="Rental car"
+        onClick={onClick}
+        background={
+          background === 'primary'
+            ? BackgroundColors.Information
+            : BackgroundColors.Primary
+        }
+      />
       <Image
         src={backgroundImage}
         width={100}
