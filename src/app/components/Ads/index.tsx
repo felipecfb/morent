@@ -1,48 +1,25 @@
-import Image from 'next/image'
-import { BackgroundColors, Button } from '../Button'
+import { Item } from './components/Item'
 
-type Background = 'primary' | 'information'
-
-interface AdsProps {
-  title: string
-  description: string
-  background: Background
-  backgroundImage: string
-  onClick: () => void
-}
-
-export function Ads({
-  title,
-  description,
-  background,
-  backgroundImage,
-  onClick,
-}: AdsProps) {
+export function Ads() {
   return (
-    <div
-      className={`w-full flex flex-col items-start gap-5 p-6 pb-28 relative ${
-        background === 'primary' ? 'bg-primary-500' : 'bg-information-500'
-      } rounded-[10px]`}
-    >
-      <div className="title flex flex-col gap-4 max-w-[284px]">
-        <h1 className="font-semibold text-3xl z-10 text-primary-0">{title}</h1>
-        <p className="z-10 text-primary-0">{description}</p>
-      </div>
-      <Button
-        title="Rental car"
-        onClick={onClick}
-        background={
-          background === 'primary'
-            ? BackgroundColors.Information
-            : BackgroundColors.Primary
-        }
+    <div className="w-full flex items-center gap-8 py-8 px-16">
+      <Item
+        title="The Best Platform for Car Rental"
+        description="Ease of doing a car rental safely and reliably. Of course at a low price."
+        background="information"
+        backgroundImage="bg-ads.svg"
+        onClick={function (): void {
+          throw new Error('Function not implemented.')
+        }}
       />
-      <Image
-        src={backgroundImage}
-        width={100}
-        height={100}
-        alt="bg"
-        className="absolute top-0 left-0 w-full h-full z-0"
+      <Item
+        title="Easy way to rent a car at a low price"
+        description="Providing cheap car rental services and safe and comfortable facilities."
+        background="primary"
+        backgroundImage="bg-ads-2.svg"
+        onClick={function (): void {
+          throw new Error('Function not implemented.')
+        }}
       />
     </div>
   )
