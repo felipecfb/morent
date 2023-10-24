@@ -1,6 +1,7 @@
 'use client'
 
 import { Ads } from './components/Ads'
+import { Switch } from './components/Switch'
 
 export default function Home() {
   return (
@@ -23,6 +24,8 @@ export default function Home() {
           throw new Error('Function not implemented.')
         }}
       />
+
+      <Switch />
     </div>
   )
 }
