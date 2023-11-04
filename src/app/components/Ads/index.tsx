@@ -2,7 +2,7 @@ import { Item } from './components/Item'
 
 export function Ads() {
   return (
-    <div className="w-full flex items-center gap-8 py-8 px-16">
+    <div className="w-full flex items-center gap-8">
       <Item
         title="The Best Platform for Car Rental"
         description="Ease of doing a car rental safely and reliably. Of course at a low price."
